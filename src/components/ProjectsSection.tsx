@@ -364,7 +364,7 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
               <div className="flex items-center gap-2.5 text-xs text-zinc-400">
                 <span className="relative w-[34px] h-[14px] overflow-hidden shrink-0">
                   <img
-                    src="/assets/aistudio/Minimalist_White_AU_Monogram_0e561556.png"
+                    src="/assets/profile/au-monogram.png"
                     alt="AU"
                     referrerPolicy="no-referrer"
                     style={{

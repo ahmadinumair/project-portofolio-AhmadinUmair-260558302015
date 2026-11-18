@@ -52,7 +52,7 @@ export const PROFILE_INFO = {
   major: 'Software Engineering (Teknologi Rekayasa Perangkat Lunak)',
   level: 'Beginner / Student Developer',
   tagline: 'Learning · Building · Growing',
-  portraitSrc: '/assets/aistudio/erasebg-transformed_2__9b3d542b.png',
+  portraitSrc: '/assets/profile/portrait.png',
   shortIntro:
     'I am a beginner Software Engineering student at Politeknik IDN Bogor, currently building my foundation in web development and programming through hands-on coursework and personal practice.',
   aboutParagraphs: [
@@ -86,7 +86,7 @@ export const TECHNICAL_SKILLS: SkillItem[] = [
     name: 'HTML5',
     category: 'Frontend',
     focusNote: 'Semantic markup and accessible document structure',
-    iconSrc: '/assets/aistudio/HTML5_ba83fed4.png',
+    iconSrc: '/assets/skills/html5.png',
     accentColor: 'rgba(227, 79, 38, 0.22)',
   },
   {
@@ -94,7 +94,7 @@ export const TECHNICAL_SKILLS: SkillItem[] = [
     name: 'CSS3',
     category: 'Frontend',
     focusNote: 'Responsive layouts, Flexbox, Grid, and visual styling',
-    iconSrc: '/assets/aistudio/CSS3_4023dd37.png',
+    iconSrc: '/assets/skills/css3.png',
     accentColor: 'rgba(21, 114, 182, 0.24)',
   },
   {
@@ -102,7 +102,7 @@ export const TECHNICAL_SKILLS: SkillItem[] = [
     name: 'JavaScript',
     category: 'Frontend',
     focusNote: 'DOM interaction, client logic, and modern ES syntax',
-    iconSrc: '/assets/aistudio/JavaScript_9b2e664f.png',
+    iconSrc: '/assets/skills/javascript.png',
     accentColor: 'rgba(247, 223, 30, 0.20)',
   },
   {
@@ -110,7 +110,7 @@ export const TECHNICAL_SKILLS: SkillItem[] = [
     name: 'Tailwind CSS',
     category: 'Frontend',
     focusNote: 'Utility-first styling and consistent design systems',
-    iconSrc: '/assets/aistudio/Tailwind_CSS_1e38d7ff.png',
+    iconSrc: '/assets/skills/tailwind.png',
     accentColor: 'rgba(56, 189, 248, 0.24)',
   },
   {
@@ -118,7 +118,7 @@ export const TECHNICAL_SKILLS: SkillItem[] = [
     name: 'PHP',
     category: 'Backend & Database',
     focusNote: 'Server-side fundamentals and dynamic web pages',
-    iconSrc: '/assets/aistudio/PHP_1deb9e52.png',
+    iconSrc: '/assets/skills/php.png',
     accentColor: 'rgba(119, 123, 179, 0.24)',
   },
   {
@@ -126,7 +126,7 @@ export const TECHNICAL_SKILLS: SkillItem[] = [
     name: 'Laravel',
     category: 'Backend & Database',
     focusNote: 'MVC architecture, routing, Blade templates, and CRUD',
-    iconSrc: '/assets/aistudio/Laravel_bf5c6f21.png',
+    iconSrc: '/assets/skills/laravel.png',
     accentColor: 'rgba(255, 45, 32, 0.22)',
   },
   {
@@ -134,7 +134,7 @@ export const TECHNICAL_SKILLS: SkillItem[] = [
     name: 'MySQL',
     category: 'Backend & Database',
     focusNote: 'Relational tables, queries, and structured data storage',
-    iconSrc: '/assets/aistudio/MySQL_203e2f13.png',
+    iconSrc: '/assets/skills/mysql.png',
     iconClassName: 'brightness-125 contrast-110',
     accentColor: 'rgba(14, 165, 233, 0.20)',
   },
@@ -143,7 +143,7 @@ export const TECHNICAL_SKILLS: SkillItem[] = [
     name: 'Git & GitHub',
     category: 'Tools',
     focusNote: 'Version tracking, commits, and collaborative repositories',
-    iconSrc: '/assets/aistudio/GitHub_f899c6c6.png',
+    iconSrc: '/assets/skills/github.png',
     iconClassName: 'brightness-0 invert',
     accentColor: 'rgba(148, 163, 184, 0.20)',
   },
@@ -161,20 +161,20 @@ export const PROJECTS: ProjectItem[] = [
     details:
       'NusantaraMart is a full-stack e-commerce web application built with a Golang backend and React frontend. It emphasizes a clean, responsive interface that makes it effortless for users to browse product categories, search items, apply discount vouchers, and inspect persisted order history.',
     technologies: ['Golang', 'React', 'Tailwind CSS', 'REST API'],
-    thumbnailSrc: '/assets/aistudio/Screenshot_2026-11-02_104806.JPG_6670cd23.png',
+    thumbnailSrc: '/assets/projects/nusantaramart-hero.png',
     gallery: [
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_104806.JPG_6670cd23.png',
+        src: '/assets/projects/nusantaramart-hero.png',
         label: 'Storefront Hero & Vouchers',
         caption: 'Promotional launch banner with instant discount codes and category filters.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_104823_7d14bf95.png',
+        src: '/assets/projects/nusantaramart-catalog.png',
         label: 'Gadget Product Catalog',
         caption: 'Filterable product grid displaying pricing, discounts, stock, and ratings.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_104835_4faaface.png',
+        src: '/assets/projects/nusantaramart-orders.png',
         label: 'Order History Modal',
         caption: 'Invoice summary persisted on the Golang backend with QRIS payment status.',
       },
@@ -193,20 +193,20 @@ export const PROJECTS: ProjectItem[] = [
     details:
       'Designed as an engaging programming learning platform landing page combining modern dark-mode aesthetics with retro pixel typography. Includes course catalogs covering Bootstrap, Tailwind CSS, and Laravel alongside community follower statistics and developer introduction.',
     technologies: ['HTML5', 'Tailwind CSS', 'Bootstrap', 'Laravel'],
-    thumbnailSrc: '/assets/aistudio/Screenshot_2026-11-02_100226_30eb2ae5.png',
+    thumbnailSrc: '/assets/projects/ahmadinumair-hero.png',
     gallery: [
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_100226_30eb2ae5.png',
+        src: '/assets/projects/ahmadinumair-hero.png',
         label: 'Retro Pixel Hero',
         caption: 'Dark-mode hero backdrop paired with yellow retro pixel display typography.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_100245_27e71aeb.png',
+        src: '/assets/projects/ahmadinumair-courses.png',
         label: 'Stats & Premium Courses',
         caption: 'Community growth counters and framework course tracks for Bootstrap, Tailwind, and Laravel.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_100254_eea758a0.png',
+        src: '/assets/projects/ahmadinumair-about.png',
         label: 'Developer Profile & Free Tracks',
         caption: 'About section introducing the creator alongside free introductory learning cards.',
       },
@@ -224,20 +224,20 @@ export const PROJECTS: ProjectItem[] = [
     details:
       'Created to simplify visual tracking of student Quran memorization records. The interface presents daily submission metrics, a 30-day progress area chart, 3-month comparative bar graphs, and an organized submission entry workflow.',
     technologies: ['UI/UX Design', 'Dashboard Layout', 'Data Visualization'],
-    thumbnailSrc: '/assets/aistudio/Screenshot_2026-11-02_093916_ea7f69e9.png',
+    thumbnailSrc: '/assets/projects/darul-ilmi-overview.png',
     gallery: [
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093916_ea7f69e9.png',
+        src: '/assets/projects/darul-ilmi-overview.png',
         label: 'Overview & 30-Day Trends',
         caption: 'Summary KPI cards with 30-day submission area chart and category donut breakdown.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093937_3182e13a.png',
+        src: '/assets/projects/darul-ilmi-report.png',
         label: 'Monthly Student Report',
         caption: 'Three-month comparative bar chart and monthly progress ledger with PDF export.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093945_a173444f.png',
+        src: '/assets/projects/darul-ilmi-form.png',
         label: 'Memorization Entry Form',
         caption: 'Structured form for recording surah, verse ranges, lines, and live scoring.',
       },
@@ -255,15 +255,15 @@ export const PROJECTS: ProjectItem[] = [
     details:
       'Smart Campus explores a focused dark-mode academic workspace featuring weekly study capacity tracking, task status summaries (To Do, In Progress, Completed), high-priority alerts, calendar scheduling, and early-warning preference controls.',
     technologies: ['Dark Theme UI', 'Task System UI', 'Responsive Grid'],
-    thumbnailSrc: '/assets/aistudio/Screenshot_2026-11-02_093500_7012ddf5.png',
+    thumbnailSrc: '/assets/projects/smart-campus-dashboard.png',
     gallery: [
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093500_7012ddf5.png',
+        src: '/assets/projects/smart-campus-dashboard.png',
         label: 'Academic Overview',
         caption: 'Weekly workload capacity gauge, task status counters, and integrated calendar.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093511_cc777438.png',
+        src: '/assets/projects/smart-campus-settings.png',
         label: 'Preferences & Early Warning',
         caption: 'Student profile controls and smart deadline risk threshold configuration.',
       },
@@ -281,25 +281,25 @@ export const PROJECTS: ProjectItem[] = [
     details:
       'Designed around warm cream tones and editorial serif typography to convey a cozy artisanal coffee atmosphere. Highlights clear navigation for exploring signature creations, filtering the artisanal menu, and reserving a table effortlessly.',
     technologies: ['Editorial Web UI', 'Responsive Design', 'Brand Styling'],
-    thumbnailSrc: '/assets/aistudio/Screenshot_2026-11-02_093228_f4f71a61.png',
+    thumbnailSrc: '/assets/projects/umair-cafe-hero.png',
     gallery: [
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093228_f4f71a61.png',
+        src: '/assets/projects/umair-cafe-hero.png',
         label: 'Editorial Brand Hero',
         caption: 'Warm serif headline, café imagery, and quick menu or table booking actions.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093248_5cce8f08.png',
+        src: '/assets/projects/umair-cafe-signatures.png',
         label: 'Signature Creations',
         caption: 'Curated three-column spotlight of signature espresso, pastry, and brunch plates.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093258_c64071bf.png',
+        src: '/assets/projects/umair-cafe-menu.png',
         label: 'Filterable Artisanal Menu',
         caption: 'Category-filtered coffee and bakery grid with instant add-to-order actions.',
       },
       {
-        src: '/assets/aistudio/Screenshot_2026-11-02_093317_8bc63a7e.png',
+        src: '/assets/projects/umair-cafe-reservation.png',
         label: 'Table Reservation Form',
         caption: 'Interactive booking form with date, time slot, party size, and seating preference.',
       },

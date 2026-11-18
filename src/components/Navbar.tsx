@@ -42,7 +42,7 @@ export default function Navbar({ activeSection, navTheme, onNavigateProjects }: 
         >
           <span className="relative w-[45px] h-[18px] sm:w-[55px] sm:h-[22px] overflow-hidden shrink-0">
             <img
-              src="/assets/aistudio/Minimalist_White_AU_Monogram_0e561556.png"
+              src="/assets/profile/au-monogram.png"
               alt="AU logo"
               referrerPolicy="no-referrer"
               style={{

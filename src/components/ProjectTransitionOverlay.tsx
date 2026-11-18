@@ -85,7 +85,7 @@ export default function ProjectTransitionOverlay({ stage }: ProjectTransitionOve
             >
               <span className="relative w-[44px] h-[18px] overflow-hidden shrink-0">
                 <img
-                  src="/assets/aistudio/Minimalist_White_AU_Monogram_0e561556.png"
+                  src="/assets/profile/au-monogram.png"
                   alt=""
                   referrerPolicy="no-referrer"
                   style={{

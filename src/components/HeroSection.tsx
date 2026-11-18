@@ -322,7 +322,7 @@ export default function HeroSection() {
                   </svg>
                   <span className="absolute w-[40px] h-[16px] overflow-hidden">
                     <img
-                      src="/assets/aistudio/Minimalist_White_AU_Monogram_0e561556.png"
+                      src="/assets/profile/au-monogram.png"
                       alt=""
                       referrerPolicy="no-referrer"
                       style={{

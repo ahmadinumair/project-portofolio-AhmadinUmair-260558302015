@@ -38,16 +38,16 @@ export default function MarqueeDivider() {
     <div
       ref={ref}
       aria-hidden="true"
-      className="relative bg-[#08080B] py-5 overflow-hidden select-none"
+      className="relative bg-[#08080B] py-6 overflow-hidden select-none"
     >
-      <div className="-rotate-1 scale-[1.03] perforated-ribbon py-2.5 shadow-[0_12px_32px_rgba(220,38,38,0.28)]">
+      <div className="-rotate-1 scale-[1.03] perforated-ribbon py-3.5 sm:py-4">
         <motion.div style={{ x: stripX }} className="flex w-max items-center">
           {repeated.map((item, idx) => (
             <div key={`${item}-${idx}`} className="flex items-center shrink-0">
-              <span className="px-5 text-[11px] font-mono font-semibold uppercase tracking-[0.22em] text-white whitespace-nowrap">
+              <span className="px-6 text-xs sm:text-[13px] font-mono font-semibold uppercase tracking-[0.22em] text-white whitespace-nowrap">
                 {item}
               </span>
-              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/65 text-xs sm:text-sm">·</span>
             </div>
           ))}
         </motion.div>

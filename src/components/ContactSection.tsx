@@ -169,9 +169,9 @@ export default function ContactSection() {
                         href={channel.href}
                         target={isMailto ? undefined : '_blank'}
                         rel={isMailto ? undefined : 'noopener noreferrer'}
-                        initial={prefersReducedMotion ? false : { opacity: 0, x: -12 }}
+                        initial={prefersReducedMotion ? false : { opacity: 0.4, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.15 }}
+                        viewport={{ once: false, amount: 0.02 }}
                         transition={{
                           duration: 0.35,
                           delay: index * 0.05,
@@ -199,9 +199,9 @@ export default function ContactSection() {
                       key={channel.id}
                       type="button"
                       onClick={() => handleCopy(channel.id, channel.copyValue)}
-                      initial={prefersReducedMotion ? false : { opacity: 0, x: -12 }}
+                      initial={prefersReducedMotion ? false : { opacity: 0.4, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: false, amount: 0.15 }}
+                      viewport={{ once: false, amount: 0.02 }}
                       transition={{
                         duration: 0.35,
                         delay: index * 0.05,

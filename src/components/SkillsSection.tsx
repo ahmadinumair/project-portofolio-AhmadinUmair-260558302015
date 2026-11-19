@@ -35,33 +35,33 @@ export default function SkillsSection() {
   // Bidirectional scroll entrance & exit for the top 3 focus circles & section shell
   const leftCircleX = useTransform(
     smoothProgress,
-    [0, 0.24, 0.76, 1],
-    prefersReducedMotion ? [0, 0, 0, 0] : [-40, 0, 0, -34]
+    [0, 0.16, 0.84, 1],
+    prefersReducedMotion ? [0, 0, 0, 0] : [-36, 0, 0, -30]
   );
   const rightCircleX = useTransform(
     smoothProgress,
-    [0, 0.24, 0.76, 1],
-    prefersReducedMotion ? [0, 0, 0, 0] : [40, 0, 0, 34]
+    [0, 0.16, 0.84, 1],
+    prefersReducedMotion ? [0, 0, 0, 0] : [36, 0, 0, 30]
   );
   const centerCircleScale = useTransform(
     smoothProgress,
-    [0, 0.24, 0.76, 1],
-    prefersReducedMotion ? [1, 1, 1, 1] : [0.85, 1, 1, 0.88]
+    [0, 0.16, 0.84, 1],
+    prefersReducedMotion ? [1, 1, 1, 1] : [0.88, 1, 1, 0.9]
   );
   const topBandOpacity = useTransform(
     smoothProgress,
-    [0, 0.18, 0.8, 1],
-    prefersReducedMotion ? [1, 1, 1, 1] : [0.15, 1, 1, 0.2]
+    [0, 0.14, 0.86, 1],
+    prefersReducedMotion ? [1, 1, 1, 1] : [0.35, 1, 1, 0.35]
   );
   const topBandY = useTransform(
     smoothProgress,
-    [0, 0.24, 0.76, 1],
-    prefersReducedMotion ? [0, 0, 0, 0] : [36, 0, 0, -32]
+    [0, 0.16, 0.84, 1],
+    prefersReducedMotion ? [0, 0, 0, 0] : [28, 0, 0, -24]
   );
   const shellScale = useTransform(
     smoothProgress,
-    [0, 0.16, 0.84, 1],
-    prefersReducedMotion ? [1, 1, 1, 1] : [0.97, 1, 1, 0.96]
+    [0, 0.14, 0.86, 1],
+    prefersReducedMotion ? [1, 1, 1, 1] : [0.97, 1, 1, 0.97]
   );
 
   // Bidirectional scroll entrance & exit for the Technical Stack grid
@@ -76,13 +76,13 @@ export default function SkillsSection() {
   });
   const stackOpacity = useTransform(
     smoothStackProgress,
-    [0, 0.2, 0.82, 1],
-    prefersReducedMotion ? [1, 1, 1, 1] : [0.2, 1, 1, 0.25]
+    [0, 0.14, 0.86, 1],
+    prefersReducedMotion ? [1, 1, 1, 1] : [0.35, 1, 1, 0.35]
   );
   const stackY = useTransform(
     smoothStackProgress,
-    [0, 0.22, 0.78, 1],
-    prefersReducedMotion ? [0, 0, 0, 0] : [32, 0, 0, -28]
+    [0, 0.16, 0.84, 1],
+    prefersReducedMotion ? [0, 0, 0, 0] : [26, 0, 0, -22]
   );
 
   const filteredSkills =

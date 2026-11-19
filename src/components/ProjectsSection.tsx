@@ -124,9 +124,10 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
   );
 
   // Scroll-linked Motion-Graphic Aperture Entrance & Exit for #projects-cinema-stage
+  // Uses GPU-safe transform + opacity (no nested clip-path or opacity:0 traps across mobile/Safari)
   const { scrollYProgress: entranceProgress } = useScroll({
     target: entranceRef,
-    offset: ['start 96%', 'end 8%'],
+    offset: ['start 98%', 'end 6%'],
   });
   const smoothEntrance = useSpring(entranceProgress, {
     stiffness: 115,
@@ -135,38 +136,32 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
   });
   const stageScale = useTransform(
     smoothEntrance,
-    [0, 0.22, 0.8, 1],
-    prefersReducedMotion ? [1, 1, 1, 1] : [0.93, 1, 1, 0.94]
+    [0, 0.14, 0.86, 1],
+    prefersReducedMotion ? [1, 1, 1, 1] : [0.95, 1, 1, 0.95]
   );
   const stageY = useTransform(
     smoothEntrance,
-    [0, 0.22, 0.8, 1],
-    prefersReducedMotion ? [0, 0, 0, 0] : [42, 0, 0, -38]
+    [0, 0.14, 0.86, 1],
+    prefersReducedMotion ? [0, 0, 0, 0] : [32, 0, 0, -28]
   );
   const stageOpacity = useTransform(
     smoothEntrance,
-    [0, 0.18, 0.84, 1],
-    prefersReducedMotion ? [1, 1, 1, 1] : [0.25, 1, 1, 0.22]
+    [0, 0.12, 0.88, 1],
+    prefersReducedMotion ? [1, 1, 1, 1] : [0.45, 1, 1, 0.4]
   );
-  const stageClipPath = useTransform(smoothEntrance, (p) => {
-    if (prefersReducedMotion) return 'inset(0% 0% 0% 0%)';
-    let insetRatio = 0;
-    if (p < 0.22) {
-      insetRatio = 1 - p / 0.22;
-    } else if (p > 0.8) {
-      insetRatio = (p - 0.8) / 0.2;
-    }
-    const clamped = Math.min(Math.max(insetRatio, 0), 1);
-    return `inset(${(clamped * 3.4).toFixed(2)}% ${(clamped * 4.4).toFixed(2)}% ${(clamped * 3.4).toFixed(2)}% ${(clamped * 4.4).toFixed(2)}%)`;
-  });
+  const stripsScrollY = useTransform(
+    smoothEntrance,
+    [0, 0.16, 0.84, 1],
+    prefersReducedMotion ? [0, 0, 0, 0] : [20, 0, 0, -18]
+  );
   const topWipeScaleX = useTransform(
     smoothEntrance,
-    [0.03, 0.22, 0.78, 0.96],
+    [0.02, 0.18, 0.82, 0.97],
     prefersReducedMotion ? [1, 1, 1, 1] : [0, 1, 1, 0]
   );
   const bottomWipeScaleX = useTransform(
     smoothEntrance,
-    [0.04, 0.24, 0.72, 0.94],
+    [0.04, 0.2, 0.78, 0.96],
     prefersReducedMotion ? [1, 1, 1, 1] : [0, 0.35, 1, 0]
   );
 
@@ -318,7 +313,6 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
             scale: stageScale,
             y: stageY,
             opacity: stageOpacity,
-            clipPath: stageClipPath,
           }}
           className="relative bg-[#111113] text-zinc-100 border-y sm:border border-white/10 shadow-[0_32px_90px_rgba(8,8,11,0.42)] overflow-hidden"
         >
@@ -355,9 +349,8 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
             {/* Internal Studio Top Bar matching reference video (00:00) */}
             <motion.div
               key={`studio-bar-${replayKey}`}
-              initial={prefersReducedMotion ? false : { opacity: 0, y: -14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.15 }}
+              initial={prefersReducedMotion ? false : { opacity: 0.4, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center justify-between gap-4 pb-8"
             >
@@ -406,10 +399,9 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
               {/* Left Sidebar Navigation Rail */}
               <motion.aside
                 key={`rail-${replayKey}`}
-                initial={prefersReducedMotion ? false : { opacity: 0, x: -18 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false, amount: 0.12 }}
-                transition={{ duration: 0.45, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
+                initial={prefersReducedMotion ? false : { opacity: 0.4, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.45, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
                 className="flex lg:flex-col justify-between gap-4 lg:gap-6 self-start lg:pt-8"
               >
                 <nav
@@ -468,7 +460,8 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
                   {viewMode === 'strips' ? (
                     <motion.div
                       key={`strips-${activeFilter}-${replayKey}`}
-                      initial={prefersReducedMotion ? false : { opacity: 0 }}
+                      style={{ y: stripsScrollY }}
+                      initial={prefersReducedMotion ? false : { opacity: 0.4 }}
                       animate={{ opacity: 1 }}
                       exit={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.985 }}
                       transition={{ duration: 0.3 }}
@@ -497,17 +490,17 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
                               initial={
                                 prefersReducedMotion
                                   ? false
-                                  : { opacity: 0, y: -44, clipPath: 'inset(0% 0% 100% 0%)' }
+                                  : { opacity: 0.35, y: -26, scaleY: 0.94 }
                               }
-                              whileInView={{
+                              animate={{
                                 opacity: 1,
                                 y: 0,
-                                clipPath: 'inset(0% 0% 0% 0%)',
+                                scaleY: 1,
                               }}
-                              viewport={{ once: false, amount: 0.06 }}
+                              style={{ transformOrigin: 'top center' }}
                               transition={{
-                                duration: 0.58,
-                                delay: idx * 0.065,
+                                duration: 0.52,
+                                delay: idx * 0.06,
                                 ease: [0.16, 1, 0.3, 1],
                               }}
                               className={`group relative text-center h-[260px] sm:h-[380px] lg:h-[440px] rounded-none overflow-hidden bg-[#0A0A0C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 ${
@@ -518,12 +511,11 @@ export default function ProjectsSection({ replayKey = 0 }: ProjectsSectionProps)
                               {!prefersReducedMotion && (
                                 <motion.span
                                   aria-hidden="true"
-                                  initial={{ y: '0%', opacity: 0.95 }}
-                                  whileInView={{ y: '105%', opacity: 0 }}
-                                  viewport={{ once: false, amount: 0.06 }}
+                                  initial={{ y: '0%', opacity: 0.9 }}
+                                  animate={{ y: '110%', opacity: 0 }}
                                   transition={{
-                                    duration: 0.5,
-                                    delay: idx * 0.065 + 0.03,
+                                    duration: 0.55,
+                                    delay: idx * 0.06 + 0.04,
                                     ease: [0.22, 1, 0.36, 1],
                                   }}
                                   className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#E50914] via-[#E50914]/40 to-transparent z-20"
@@ -1121,11 +1113,10 @@ function ProjectParallaxGallery({
                   type="button"
                   onClick={() => onOpenLightbox(tile.project, tile.screenIndex)}
                   style={{ y: parallaxY }}
-                  initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.94 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: false, amount: 0.05 }}
+                  initial={prefersReducedMotion ? false : { opacity: 0.35, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   whileHover={prefersReducedMotion ? undefined : { scale: 1.03, zIndex: 40 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.4, delay: idx * 0.04, ease: [0.16, 1, 0.3, 1] }}
                   aria-label={`Inspect ${tile.project.title} — ${tile.screen.label}`}
                   className={`group absolute ${slot.positionClass} ${slot.aspectClass} rounded-none overflow-hidden bg-[#09090B] shadow-[0_24px_60px_rgba(0,0,0,0.72)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500`}
                 >
@@ -1166,9 +1157,8 @@ function ProjectParallaxGallery({
               key={`${activeProject.id}-mobile-${scr.src}`}
               type="button"
               onClick={() => onOpenLightbox(activeProject, idx)}
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.05 }}
+              initial={prefersReducedMotion ? false : { opacity: 0.35, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.35,
                 delay: Math.min(idx * 0.05, 0.2),
